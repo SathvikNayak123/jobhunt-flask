@@ -1,0 +1,12 @@
+
+<div class="job-card">
+    <div class="job-info">
+        <h3>{{job.title}}</h3>
+        <p>{{job.company}}</p>
+        <p>{{job.location}}</p>
+        {% if 'salary' in job %}
+            <p>{{job.currency}} {{job.salary}}</p>
+        {% endif %}
+    </div>
+    <a href="{{ url_for('show_jobs', id=job.id) }}" class="apply-button">Apply Now</a>
+</div>
