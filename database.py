@@ -1,4 +1,12 @@
 import pymysql
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+cloud_host=os.getenv('cloud_host')
+cloud_key=os.getenv('cloud_key')
+
 
 def load_jobs():
     timeout = 10
@@ -7,8 +15,8 @@ def load_jobs():
         connect_timeout=timeout,
         cursorclass=pymysql.cursors.DictCursor,
         db="defaultdb",
-        host="mysql-sathvik-nayaksathvik22-b424.g.aivencloud.com",
-        password="AVNS_F7xBjXJq9WbCar_T4q1",
+        host=cloud_host,
+        password=cloud_key,
         read_timeout=timeout,
         port=23877,
         user="avnadmin",
@@ -29,8 +37,8 @@ def search_jobs(id):
         connect_timeout=timeout,
         cursorclass=pymysql.cursors.DictCursor,
         db="defaultdb",
-        host="mysql-sathvik-nayaksathvik22-b424.g.aivencloud.com",
-        password="AVNS_F7xBjXJq9WbCar_T4q1",
+        host=cloud_host,
+        password=cloud_key,
         read_timeout=timeout,
         port=23877,
         user="avnadmin",
@@ -59,8 +67,8 @@ def add_application_to_db(job_id, data):
         connect_timeout=timeout,
         cursorclass=pymysql.cursors.DictCursor,
         db="defaultdb",
-        host="mysql-sathvik-nayaksathvik22-b424.g.aivencloud.com",
-        password="AVNS_F7xBjXJq9WbCar_T4q1",
+        host=cloud_host,
+        password=cloud_key,
         read_timeout=timeout,
         port=23877,
         user="avnadmin",
